@@ -8,7 +8,6 @@ function App() {
       <h1>So frustrating </h1>
       <h1>Akash vai rocks</h1>
       <h1>ভালো লাগে নারে ভাই</h1>
-
     </div>
   );
 }
