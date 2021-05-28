@@ -4,10 +4,10 @@ import "./App.css";
 function App() {
   return (
     <div className="App">
-      this is akash
+      this is Shimu
       <h1>So frustrating </h1>
-      <h1>Akash vai roks</h1>
-      <h1>Solayman changed something</h1>
+      <h1>Akash vai rocks</h1>
+      <h1>ভালো লাগে নারে ভাই</h1>
     </div>
   );
 }
