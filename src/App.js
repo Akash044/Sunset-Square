@@ -7,6 +7,7 @@ function App() {
       this is akash
       <h1>So frustrating </h1>
       <h1>Akash vai roks</h1>
+      <h1>Solayman changed something</h1>
     </div>
   );
 }
