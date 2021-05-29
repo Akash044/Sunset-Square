@@ -1,13 +1,11 @@
 import logo from "./logo.svg";
 import "./App.css";
+import Home from "./component/Home/Home";
 
 function App() {
   return (
     <div className="App">
-      this is Shimu
-      <h1>So frustr </h1>
-      <h1>Akash vai rocks</h1>
-      <h1>ভালো লাগে নারে ভাই</h1>
+      <Home></Home>
     </div>
   );
 }
