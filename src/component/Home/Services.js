@@ -31,11 +31,11 @@ const Services = () => {
         .then(data=>setServices(data))
     },[])
     return (
-        <div className="pb-5" style={{backgroundColor:'#2d2e32'}}>
+        <div className="pb-5">
             <div className="container">
             <div style={{display:'flex',justifyContent:'center',alignItems:'center'}}
-                     className="spinner mt-5 pt-5">
-                    <h1 className="text-white">OUR SERVICES</h1>
+                     className="services spinner mt-5 pt-5">
+                    <h1 className="">OUR SERVICES</h1>
                     {
                         services.length === 0 && <Spinner animation="border" variant="info" />
                     }

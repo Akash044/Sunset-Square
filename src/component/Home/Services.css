@@ -4,7 +4,13 @@
     max-width: 350px;
     margin: 5px;
   }
-  
+ .services h1{
+   font-weight: bold;
+   color:#82b440;
+ } 
+ .card-body h5{
+  color:#82b440;
+ }
   .images img {
     width: 100%;
     top: 0;
