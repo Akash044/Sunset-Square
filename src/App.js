@@ -1,26 +1,31 @@
-import "./App.css";
+import { createContext, useState } from "react";
 import Home from "./component/Home/Home";
+import Login from "./component/Login/Login";
 import {
   BrowserRouter as Router,
   Switch,
-  Route
+  Route,
+  Link
 } from "react-router-dom";
-import Search from "./component/Search/Search";
-
+export const UserContext = createContext();
 function App() {
+  const[loggedInUser,setLoggedInUser]=useState({});
   return (
-    <div className="App">
+    <UserContext.Provider value ={[loggedInUser, setLoggedInUser]}>
       <Router>
-        <Switch>
-          <Route exact path="/">
-            <Home />
-          </Route>
-          <Route path="/experience">
-            <Search />
-          </Route>
-        </Switch>
-    </Router>
-    </div>
+      <Switch>
+      <Route exact path ="/">
+          <Home></Home>
+        </Route>
+        <Route path ="/home">
+          <Home></Home>
+        </Route>
+        <Route path="/login">
+          <Login></Login>
+        </Route>
+      </Switch>
+      </Router>
+      </UserContext.Provider>
   );
 }
 
