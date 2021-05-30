@@ -9,23 +9,24 @@ import {
   incrementAdultsTicket,
   incrementBabiesTicket,
   incrementChildTicket,
-  loadExperienceData,
   middleware,
   setArrivalDate,
   setDepartureDate,
   setLocation,
 } from "../../redux/actions/actions";
 import Experiences from "./Experiences";
+import Navbar from "../Home/Navbar";
 
 const Search = () => {
   const today = new Date().toISOString().substring(0, 10);
   const classes = useStyles();
+  const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(middleware());
-  }, []);
+  }, [dispatch]);
 
-  const dispatch = useDispatch();
+  
   const adults = useSelector((state) => {
     return state.forms.adults;
   });
@@ -46,7 +47,7 @@ const Search = () => {
   });
 
   // console.log(arrival, departure);
-  return (
+  return (<><Navbar />
     <div className="row mt-5">
       <div className="col-md-4 mb-4">
         <h4>Where do you want to go</h4>
@@ -203,7 +204,7 @@ const Search = () => {
           ))}
         </div>
       </div>
-    </div>
+    </div></>
   );
 };
 

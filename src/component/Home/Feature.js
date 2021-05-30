@@ -21,7 +21,7 @@ const Feature = () => {
                             </div>
                         </div>
                     </div>
-                   <div className="bg-white" style={{width:"900px", border:'1px solid',padding:'50px 0px',paddingLeft:'40px'}}>
+                   <div className="bg-white mx-auto mt-4" style={{width:"900px", border:'1px solid',padding:'50px 0px',paddingLeft:'40px'}}>
                    <HoseRent></HoseRent>
                    </div>
                 </div>
