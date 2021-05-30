@@ -38,7 +38,7 @@ const HoseRent = () => {
             </div>
         
             <div className="text">
-                <h2 style={{color:'#bf9410'}} class="title">
+                <h2 style={{color:'#bf9410'}} className="title">
                 2,000 </h2>
                 <h5>Parking</h5>
             </div>
@@ -51,7 +51,7 @@ const HoseRent = () => {
                 <img src={image2} alt="" />
            </div>
             <div className="text">
-                <h2 style={{color:'#bf9410'}} class="title">
+                <h2 style={{color:'#bf9410'}} className="title">
                 1,000 </h2>
                 <h5>House Units</h5>
             </div>
@@ -64,7 +64,7 @@ const HoseRent = () => {
             </div>
         
             <div className="text">
-                <h2 style={{color:'#bf9410'}} class="title">
+                <h2 style={{color:'#bf9410'}} className="title">
                 1,000 </h2>
                 <h5>Green Area</h5>
             </div>
@@ -77,7 +77,7 @@ const HoseRent = () => {
             </div>
         
             <div className="text">
-                <h2 style={{color:'#bf9410'}} class="title">
+                <h2 style={{color:'#bf9410'}} className="title">
                 5,000 </h2>
                 <h5>Apartments</h5>
             </div>
@@ -91,7 +91,7 @@ const HoseRent = () => {
             </div>
         
             <div className="text">
-                <h2 style={{color:'#bf9410'}} class="title">
+                <h2 style={{color:'#bf9410'}} className="title">
                 5,000 </h2>
                 <h5>Site Area</h5>
             </div>

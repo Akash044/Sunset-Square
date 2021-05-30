@@ -26,14 +26,14 @@ const Services = () => {
         }
       };
     useEffect(()=>{
-        fetch('https://nameless-tundra-76042.herokuapp.com/hotels?fbclid=IwAR0c6qxnh3HzzS4Gb51Im00xeglK4C2t5CgaUSvU5mGu9dbY4omuq__qsJs')
+        fetch('https://nameless-tundra-76042.herokuapp.com/hotels')
         .then(res=>res.json())
         .then(data=>setServices(data))
     },[])
     return (
-        <div style={{backgroundColor:'#2d2e32'}}>
+        <div className="pb-5" style={{backgroundColor:'#2d2e32'}}>
             <div className="container">
-                <div style={{display:'flex',justifyContent:'center',alignItems:'center'}}
+            <div style={{display:'flex',justifyContent:'center',alignItems:'center'}}
                      className="spinner mt-5 pt-5">
                     <h1 className="text-white">OUR SERVICES</h1>
                     {
