@@ -89,6 +89,14 @@ export const formReducer= (state = initialState, action) => {
             return newForm;
 
         };
+        case 'LOAD_SERVICES_DATA':{
+            const newForm = {
+                ...state,
+                services:action.payload,
+            }
+            return newForm;
+
+        };
         default: return state;
 
     }

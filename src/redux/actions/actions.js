@@ -75,3 +75,21 @@ export const middleware = (payload) =>{
         })
      }
 }
+
+
+export const servicesData = (payload) => {
+    return { 
+        type: 'LOAD_SERVICES_DATA',
+        payload: payload,
+    }
+}
+
+export const middleware1 = (payload) =>{
+    return (dispatch)=>{
+        fetch("https://nameless-tundra-76042.herokuapp.com/hotels")
+        .then(res => res.json())
+        .then(data =>{
+            dispatch(servicesData(data))
+        })
+     }
+}
