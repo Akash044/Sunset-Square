@@ -6,7 +6,7 @@ const Service = (props) => {
   return (
     <div className="col-md-4">
       <Rotate bottom right>
-      <div className="card" style={{ width: "20rem",height:'430px' }}>
+      <div className="card shadow p-3 mb-5 bg-body rounded" style={{ width: "20rem",height:'430px' }}>
         <div className="images">
           <img src={image} className="card-img-top" alt="..." />
         </div>
