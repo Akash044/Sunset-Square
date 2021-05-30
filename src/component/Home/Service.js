@@ -1,5 +1,6 @@
 import React from "react";
 import "./Services.css";
+import { Link } from "react-router-dom";
 const Service = (props) => {
   const { name, image } = props.service;
   return (
@@ -14,9 +15,9 @@ const Service = (props) => {
             Some quick example text to build on the card title and make up the
             bulk of the card's content.
           </p>
-          <a href="#" className="btn btn-primary">
-            Book Now
-          </a>
+          <Link to="/book">
+            <button className="btn btn-primary">Book Now</button>
+          </Link>
         </div>
       </div>
     </div>

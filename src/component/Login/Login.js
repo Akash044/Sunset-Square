@@ -3,12 +3,15 @@ import firebase from "firebase/app";
 import firebaseConfig from './firebase.Config';
 import "firebase/auth";
 import { UserContext } from '../../App';
-import { useHistory, useLocation } from 'react-router';
+import { useHistory, useLocation } from 'react-router-dom';
 import './Login.css';
 import { useContext, useState } from "react";
+import { useDispatch } from "react-redux";
+import { setUserInfo } from "../../redux/actions/actions";
 
 
 const Login = () => {
+    const dispatch = useDispatch(); 
     const [newUser, setNewUser]=useState(false);
     const[loggedInUser, setLoggedInUser]=useContext(UserContext);
     const[validForm, setValidForm]= useState({
@@ -67,11 +70,11 @@ const Login = () => {
         firebase.auth()
             .signInWithPopup(provider)
             .then((result) => {
-            const{displayName,email,photoURL} = result.user;
-            console.log(result.user);
-            const signedInUser={name:displayName,email,photoURL};
-            setLoggedInUser(signedInUser);
-            history.replace(from);
+                console.log(result.user);
+                const user = result.user;
+                const newData = {name: user.displayName, email: user.email,image:user.photoURL};
+                dispatch(setUserInfo(newData));
+                history.replace(from);
             }).catch((error) => {
             var errorCode = error.code;
             var errorMessage = error.message;
@@ -202,7 +205,7 @@ const Login = () => {
                             {user.success && <p style={{color:'Green'}}>You account {newUser ? 'created' : 'logged in'}  successfully </p> }
                         
                         
-                            <button onClick={handleGoogleSignIn}> Google sign in</button>
+                            <button className="btn btn-success"onClick={handleGoogleSignIn}> Google sign in</button>
                         
                         </div>
                     </div>

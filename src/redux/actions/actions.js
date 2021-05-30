@@ -59,6 +59,20 @@ export const setLocation = (payload) => {
     }
 }
 
+export const setUserInfo = (payload) => {
+    return { 
+        type: 'SET_USER_INFO',
+        payload: payload,
+    }
+}
+
+export const loadSearchInfo = (payload) => {
+    return { 
+        type: 'LOAD_SEARCH_INFO',
+        payload: payload,
+    }
+}
+
 export const loadExperienceData = (payload) => {
     return { 
         type: 'LOAD_EXPERIENCE_DATA',
@@ -66,12 +80,22 @@ export const loadExperienceData = (payload) => {
     }
 }
 
-export const middleware = (payload) =>{
+export const middleware1 = (payload) =>{
     return (dispatch)=>{
         fetch("https://nameless-tundra-76042.herokuapp.com/experiences")
         .then(res => res.json())
         .then(data =>{
             dispatch(loadExperienceData(data))
+        })
+     }
+}
+
+export const middleware2 = (payload) =>{
+    return (dispatch)=>{
+        fetch("https://air-cnc-homes-api.herokuapp.com/homes")
+        .then(res => res.json())
+        .then(data =>{
+            dispatch(loadSearchInfo(data))
         })
      }
 }

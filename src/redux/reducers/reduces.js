@@ -8,6 +8,8 @@ const initialState ={
     location:'',
     services: [],
     experiences:[],
+    userInfo:{},
+    searchInfo:[],
 }
 
 export const formReducer= (state = initialState, action) => {
@@ -81,10 +83,26 @@ export const formReducer= (state = initialState, action) => {
             return newForm;
 
         };
+        case 'SET_USER_INFO':{
+            const newForm = {
+                ...state,
+                userInfo:action.payload,
+            }
+            return newForm;
+
+        };
         case 'LOAD_EXPERIENCE_DATA':{
             const newForm = {
                 ...state,
                 experiences:action.payload,
+            }
+            return newForm;
+
+        };
+        case 'LOAD_SEARCH_INFO':{
+            const newForm = {
+                ...state,
+                searchInfo:action.payload,
             }
             return newForm;
 

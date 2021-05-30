@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import TextField from "@material-ui/core/TextField";
+import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import {
   decrementAdultsTicket,
@@ -9,7 +10,7 @@ import {
   incrementAdultsTicket,
   incrementBabiesTicket,
   incrementChildTicket,
-  middleware,
+  middleware1,
   setArrivalDate,
   setDepartureDate,
   setLocation,
@@ -23,7 +24,7 @@ const Search = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(middleware());
+    dispatch(middleware1());
   }, [dispatch]);
 
   
@@ -187,6 +188,7 @@ const Search = () => {
         {/* selecting seat section end*/}
 
         {/* Search button */}
+        <Link to='/search'>
         <div
           onClick={() => console.log("clicked")}
           style={{ cursor: "pointer" }}
@@ -194,6 +196,7 @@ const Search = () => {
         >
           SEARCH
         </div>
+        </Link>
       </div>
 
       <div className="col-md-8">
