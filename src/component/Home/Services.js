@@ -1,11 +1,19 @@
-import React, { useEffect, useState } from 'react';
 import { Spinner } from 'react-bootstrap';
 import Service from './Service';
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
+import { useDispatch, useSelector } from 'react-redux';
+import { middleware1 } from '../../redux/actions/actions';
+import { useEffect } from 'react';
 const Services = () => {
-    const [services, setServices]=useState([]);
+    const dispatch = useDispatch();
+    useEffect(() => {
+      dispatch(middleware1());
+    }, [dispatch]);
 
+    const services = useSelector((state) => {
+      return state.forms.services;
+    });
     const responsive = {
         superLargeDesktop: {
           // the naming can be any, depends on you.
@@ -18,18 +26,13 @@ const Services = () => {
         },
         tablet: {
           breakpoint: { max: 1024, min: 464 },
-          items: 2
+          items: 1
         },
         mobile: {
           breakpoint: { max: 464, min: 0 },
           items: 1
         }
       };
-    useEffect(()=>{
-        fetch('https://nameless-tundra-76042.herokuapp.com/hotels')
-        .then(res=>res.json())
-        .then(data=>setServices(data))
-    },[])
     return (
         <div className="pb-5">
             <div className="container">
@@ -43,7 +46,7 @@ const Services = () => {
                 <div className="row mt-5">
                     <Carousel responsive={responsive}>
                     {
-                        services.map(service=><Service service={service}></Service>)
+                        services?.map(service=><Service service={service}></Service>)
                     }
                     </Carousel>
                 </div>
