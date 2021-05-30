@@ -2,7 +2,7 @@ import React from "react";
 import Stars from "../../stars/Stars";
 
 const Experiences = (props) => {
-  const { location, name, price, person, Features, image, host, review } =
+  const { location, name, price, image, review } =
     props.experience;
 
   return (
@@ -15,6 +15,7 @@ const Experiences = (props) => {
           <p>{`$${price} per person`}</p>
           
           <p>
+          <Stars />
           <Stars />
           <Stars />
           <Stars />
